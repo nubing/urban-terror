@@ -1,5 +1,5 @@
 name: urban-terror
-version: '4.34'
+version: '4.3.4'
 summary: Free multiplayer first person shooter developed by FrozenSand
 description: |
   Urban Terror can be described as a Hollywood tactical shooter;
@@ -35,8 +35,7 @@ parts:
     plugin: dump
     build-attributes:
       - no-system-libraries
-    # source: http://cdn.urbanterror.info/urt/43/releases/zips/UrbanTerror434_full.zip
-    source: ./UrbanTerror434_full.zip
+    source: http://cdn.urbanterror.info/urt/43/releases/zips/UrbanTerror434_full.zip
     override-build: |
       echo "building overide"
       snapcraftctl build
