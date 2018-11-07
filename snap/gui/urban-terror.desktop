@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1
+Encoding=UTF-8
+Name=Urban Terror
+Comment=Free multiplayer first person shooter developed by FrozenSand
+Icon=${SNAP}/meta/gui/urban-terror.png
+Exec=urban-terror
+Terminal=false
+StartupNotify=false
+Categories=Game;

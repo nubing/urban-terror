@@ -1,0 +1,72 @@
+name: urban-terror
+version: '4.34'
+summary: Free multiplayer first person shooter developed by FrozenSand
+description: |
+  Urban Terror can be described as a Hollywood tactical shooter;
+  somewhat realism based, but the motto is "fun over realism".
+  This results in a very unique, enjoyable and addictive game.
+  It is available for Windows, Linux and Macintos.
+
+grade: stable
+confinement: strict
+
+apps:
+  dedicated:
+    command: desktop-launch $SNAP/UrbanTerror43/Quake3-UrT-Ded.x86_64
+    plugs:
+      - network
+      - network-bind
+
+  urban-terror:
+    command: desktop-launch $SNAP/UrbanTerror43/Quake3-UrT.x86_64
+    environment:
+      SDL_AUDIODRIVER: pulse
+    plugs:
+      - network
+      - network-bind
+      - opengl
+      - optical-drive
+      - pulseaudio
+      - wayland
+      - x11
+
+parts:
+  urban-terror:
+    plugin: dump
+    build-attributes:
+      - no-system-libraries
+    # source: http://cdn.urbanterror.info/urt/43/releases/zips/UrbanTerror434_full.zip
+    source: ./UrbanTerror434_full.zip
+    override-build: |
+      echo "building overide"
+      snapcraftctl build
+    after:
+      - desktop-glib-only
+    build-packages:
+      - dpkg
+    stage-packages:
+      - libasound2
+      - libbsd0
+      - libcurl3
+      - libgcc1
+      - libglu1-mesa
+      - libjpeg62
+      - libpulse0
+      - libsdl1.2debian
+      - libstdc++6
+      - libvorbisfile3
+      - libx11-6
+      - libxau6
+      - libxcb1
+      - libxdmcp6
+      - libxext6
+      - libxpm4
+      - libxxf86vm1
+      - zlib1g
+    prime:
+      - -UrbanTerror43/Quake3-UrT.app
+      - -UrbanTerror43/Quake3-UrT.exe
+      - -UrbanTerror43/Quake3-UrT.i386
+      - -UrbanTerror43/Quake3-UrT-Ded.exe
+      - -UrbanTerror43/Quake3-UrT-Ded.i386
+
