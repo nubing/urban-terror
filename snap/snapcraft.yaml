@@ -10,6 +10,9 @@ description: |
 grade: stable
 confinement: strict
 
+architectures:
+  - build-on: amd64
+
 apps:
   dedicated:
     command: desktop-launch $SNAP/UrbanTerror43/Quake3-UrT-Ded.x86_64
