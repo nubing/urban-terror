@@ -10,7 +10,9 @@ It is available for Windows, Linux and Macintosh. More info at their [site](http
 
 ## Installation
 
-Open in Desktop store on [Snapcraft page](https://snapcraft.io/urban-terror) or install in terminal.
+Get it from the Snap Store or install in terminal.
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/urban-terror)
 
 	snap install urban-terror
 
